@@ -1,48 +1,34 @@
 # ECS34proj1
 Yueqiang Hu (923469948)
 ## Project Status
-This the current status of the project ...
-## Known Issues
-The project fails to function properly in ...
-## Code References
-* [Different ways to initialize
-variables](https://stackoverflow.com/questions/22543875/different-ways-to-
-initialize-variables)
-* [Some other link](https://stackoverflow.com)
+This the current status of the project is finished
 ## Generative AI Use
-I used ChatGPT for Prompt 1, and ZZZZZ for Prompt 2....
+I used ChatGPT for Prompt 1:std::vector<std::string> result;
+I used ChatGPT for prompt 2:for (char c : str) {
+        if (c == '\t') {
+            int spaces = tabsize - (col % tabsize);
+            out.append(spaces, ' ');
+            col += spaces;
+        } else {
+            out.push_back(c);
+            col += 1;
+            if (c == '\n') col = 0;
+        }
+    }
+I used ChatGPT for prompt 3:auto norm = [&](char c) -> char {
+    if (!ignorecase) return c;
+    if (c >= 'A' && c <= 'Z') return char(c - 'A' + 'a'); //This checks if the character is an uppercase letter
+    return c;
+};
 ### Prompt 1
-How do I iterate over all characters in a string in C++17?
+How to declare an unknown length string and store split?
 ### Response 1
-In C++17, you can iterate over all characters in a string using a range-based for
-loop. Here's an example:
-```cpp
-#include <iostream>
-#include <string>
-int main() {
-std::string myString = "Hello, World!";
-// Using range-based for loop to iterate over characters in the string
-for (char c : myString) {
-std::cout << c << " ";
-}
-return 0;
-}
-```
-In this example, the `for (char c : myString)` loop iterates over each character in
-the string `myString`, and the variable `c` takes on the value of each character in
-turn. The loop body prints each character followed by a space.
-This is a concise and readable way to iterate over the characters in a string in C+
-+17.
-### Chagnes 1
-I only needed the `for` loop part, and my string was named `bar` so I changed it to
-just:
-```cpp
-// AI Generated
-for (char c : bar) {
-```
+ChatGPT explained how to iterate over characters in a C++ string using a range-based for loop and showed that a std::vector<std::string> can be used to store multiple string elements.
 ### Prompt 2
-My other prompt...
+How to implement tab expansion in C++
 ### Response 2
-The other response...
-### Changes 2
-The other changes made...
+ChatGPT provided a code example demonstrating how to expand tab characters (\t) into the correct number of spaces based on a given tab size and the current column position while iterating through a string.
+### Prompt 3
+How to normalize characters for case-insensitive comparison (used for ignorecase in EditDistance).
+### Response 3
+ChatGPT showed how to normalize characters for case-insensitive comparison by converting uppercase letters to lowercase using a helper function (norm) controlled by an ignorecase flag.
